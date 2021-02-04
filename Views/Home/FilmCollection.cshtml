@@ -1,0 +1,54 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Film Collection";
+}
+
+<div>
+    <h3>Here are the films currently in the collection:</h3>
+
+    <table>
+        <thead>
+            <tr><th>Title</th><th>Year</th><th>Director</th><th>Rating</th><th>Edited</th><th>Lent To:</th><th>Notes</th></tr>
+        </thead>
+
+        <tbody>
+            @foreach (JoelHiltonFilmCollection.Models.ApplicationResponse x in Model)
+            {
+                <!--Make Independence Day not display-->
+                if (x.Title != "Independence Day" && x.Title != "independence day" && x.Title != "Independence day")
+                {
+                    <tr>
+                        <td>@x.Title</td>
+                        <td>@x.Year</td>
+                        <td>@x.Director</td>
+                        <td>@x.Rating</td>
+
+                        <!--Change true/false output to yes/no-->
+                        @if (x.Edited == true)
+                        {
+                            <td>Yes</td>
+                        }
+                        else if (x.Edited == false)
+                        {
+                            <td>No</td>
+                        }
+                        else
+                        {
+                            <td></td>
+                        }
+
+                        <td>@x.LentTo</td>
+                        <td>@x.Notes</td>
+                    </tr>
+                }
+                else
+                {
+
+                }
+            }
+
+        </tbody>
+    </table>
+</div>

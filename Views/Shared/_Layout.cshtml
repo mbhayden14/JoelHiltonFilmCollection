@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Joel Hilton Film Collection Site</title>
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico" />
+
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+<body>
+
+    <h1>@ViewBag.Title</h1>
+
+    <menu>
+        <ul>
+            <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+            <li><a asp-controller="Home" asp-action="FilmSubmission">Add Film</a></li>
+            <li><a asp-controller="Home" asp-action="FilmCollection">Film Collection</a></li>
+            <li><a asp-controller="Home" asp-action="MyPodcasts">My Podcasts</a></li>
+        </ul>
+    </menu>
+
+    <br />
+
+
+    @RenderBody()
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <footer>Here is the footer. Copyright 2021</footer>
+
+
+
+</body>
+</html>
